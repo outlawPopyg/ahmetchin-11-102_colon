@@ -6,9 +6,10 @@ import Data.Map (Map)
 
 -- | Слова
 data Cmd
-  = Word String -- ^ слово
-  | Number Int  -- ^ число
-  deriving (Eq,Show,Read)
+  = Word String  -- Слово (команда)
+  | Number Int   -- Число
+  | IfThen [Cmd] [Cmd]  -- IF ... THEN или IF ... ELSE ... THEN
+  deriving (Eq, Show, Read)
 
 -- | Программа
 newtype Program = Program
