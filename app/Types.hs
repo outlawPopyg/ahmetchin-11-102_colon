@@ -6,9 +6,9 @@ import Data.Map (Map)
 
 -- | Слова
 data Cmd
-  = Word String  -- Слово (команда)
-  | Number Int   -- Число
-  | IfThen [Cmd] [Cmd]  -- IF ... THEN или IF ... ELSE ... THEN
+  = Word String    -- Обычная команда
+  | Number Int     -- Число
+  | If [Cmd] [Cmd] -- IF ... THEN или IF ... ELSE ... THEN
   deriving (Eq, Show, Read)
 
 -- | Программа
